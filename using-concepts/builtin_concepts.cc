@@ -1,27 +1,27 @@
 #include <string>
 #include <concepts>
 
-void function_without_concept(auto x) {
+void function_without_concept(const auto& x) {
     std::string v = x;
 }
 
-void func_with_auto_inline(std::convertible_to<std::string> auto x) {
+void func_with_auto_inline(const std::convertible_to<std::string> auto& x) {
     std::string v = x;
 }
 
-void func_with_auto_postfix(auto x)
+void func_with_auto_postfix(const auto& x)
     requires std::convertible_to<decltype(x), std::string> {
     std::string v = x;
 }
 
 template <std::convertible_to<std::string> T>
-void func_with_template_inline(T x) {
+void func_with_template_inline(const T& x) {
     std::string v = x;
 }
 
 template <typename T>
     requires std::convertible_to<T, std::string>
-void func_with_template_postfix(T x) {
+void func_with_template_postfix(const T& x) {
     std::string v = x;
 }
 
