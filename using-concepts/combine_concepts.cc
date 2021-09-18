@@ -15,6 +15,7 @@ void function(const T& x) {
 }
 
 int main() {
-    function(1);
-    function([]() { return 2; });
+    function(1); // OK, integral
+    function([]() { return 2; }); // OK, invocable, returns integral
+    function(2.0); // Fails
 }

@@ -9,5 +9,5 @@ struct X {};
 
 int main() {
 	function(1); // OK
-	//function(X{}); // Fails
+	function(X{}); // Fails
 }

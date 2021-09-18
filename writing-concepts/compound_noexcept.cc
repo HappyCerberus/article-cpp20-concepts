@@ -15,5 +15,5 @@ template <assignment_cant_throw T> struct Test {};
 
 int main() {
   Test<X> a; // OK
-  // Test<Y> b; // Fails
+  Test<Y> b; // Fails
 }

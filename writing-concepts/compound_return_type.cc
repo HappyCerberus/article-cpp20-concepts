@@ -10,6 +10,6 @@ void function(const T& f) {};
 
 int main() {
     function([](){ return 1; }); // OK
-    // function([](){ return 1.0; }); // doesn't return integral
-    // function(1); // 1() is not a valid expression
+    function([](){ return 1.0; }); // doesn't return integral
+    function(1); // 1() is not a valid expression
 }
